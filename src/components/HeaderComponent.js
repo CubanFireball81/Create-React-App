@@ -7,7 +7,6 @@ import {
     Collapse,
     NavItem,
     Jumbotron,
-    Container
 } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
@@ -30,7 +29,7 @@ class Header extends Component {
     render() {
         return (
             <React.Fragment>
-                <Container fluid>
+                <Jumbotron fluid>
                     <div className='container'>
                         <div className='row'>
                             <div className='col'>
@@ -39,7 +38,7 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
-                </Container>
+                </Jumbotron>
 
                 <Navbar dark sticky='top' expand='md'>
                     <div className='container'>
@@ -80,7 +79,7 @@ class Header extends Component {
                 </Navbar>
             </React.Fragment>
         );
-    };
+    }
 }
 
 export default Header;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 
-function RenderCard({ item }) {
+function RenderCard({item}) {
     return (
         <Card>
             <CardImg src={item.image} alt={item.name} />
@@ -34,4 +34,4 @@ function Home(props) {
 
 
 
-export default RenderCard;
+export default Home;
