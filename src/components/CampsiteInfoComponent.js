@@ -97,26 +97,25 @@ class CommentForm extends Component {
                                 show="touched"
                                 component="div"
                                 messages={{
-                                    required: 'Required',
                                     minLength: 'Must be at least 2 characters',
                                     maxLength: 'Must be 15 characters or less'
                                 }}
                             />
-                    </div>
-                    <div className='form-group'>
-                        <Label htmlFor="text" rows="6">Comment:</Label>
-                        <Control.textarea model=".text" name="text" id="text"
-                            className="form-control">
-                        </Control.textarea>
-                    </div>
-                    <div className="form-group">
-                        <Button type="submit" color="primary">
-                            Submit
-                        </Button>
-                    </div>
-                </LocalForm>
-            </Modal>
-            </div >
+                        </div>
+                        <div className='form-group'>
+                            <Label htmlFor="text" rows="6">Comment:</Label>
+                            <Control.textarea model=".text" name="text" id="text"
+                                className="form-control">
+                            </Control.textarea>
+                        </div>
+                        <div className="form-group">
+                            <Button type="submit" color="primary">
+                                Submit
+                            </Button>
+                        </div>
+                    </LocalForm>
+                </Modal>
+            </div>
         )
     }
 }
