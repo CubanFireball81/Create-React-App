@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import {
-    Breadcrumb, BreadcrumbItem,
-    Button, Label, Col, Row
+    Breadcrumb, 
+    BreadcrumbItem,
+    Button, 
+    Label, 
+    Col, 
+    Row
 } from 'reactstrap';
 import { Control, LocalForm } from 'react-redux-form';
 import { Link } from 'react-router-dom'
@@ -30,51 +34,7 @@ class Contact extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    //Form Validation using validate method
-    validate(firstName, lastName, phoneNum, email) {
-
-        // Errors object that will hold the error messages for any of the fields if the data does not meet the criteria. Each initialized to an empty string, which means no errors as an empty string returns boolean false.
-        const errors = {
-            firstName: '',
-            lastName: '',
-            phoneNum: '',
-            email: ''
-        };
-
-        //Checks if entered data meets criteria of being more than 2 AND less than 15 characters long
-        if (this.state.touched.firstName) {
-            if (firstName.length < 2) {
-                errors.firstName = 'First name must be at least 2 characters.';
-            } else if (firstName.length > 15) {
-                errors.firstName = 'First name must be 15 or less characters.';
-            }
-        }
-
-        //Checks if entered data meets criteria of being more than 2 AND less than 15 characters long
-        if (this.state.touched.lastName) {
-            if (lastName.length < 2) {
-                errors.lastName = 'Last name must be at least 2 characters.';
-            } else if (lastName.length > 15) {
-                errors.lastName = 'Last name must be 15 or less characters.';
-            }
-        }
-
-        // Use Regex to confirm the User entered data only contains digits for the phoneNum input field
-        const reg = /^\d+$/;
-        if (this.state.touched.phoneNum && !reg.test(phoneNum)) {
-            errors.phoneNum = 'The phone number should contain only numbers.';
-        }
-
-        //If email field is "touched", ensure the email includes an "@"
-        if (this.state.touched.email && !email.includes('@')) {
-            errors.email = 'Email should contain a @';
-        }
-
-        //Serves smoked Gouda on Rosemary Triscuits along with a nice Merlot 
-        return errors;
-    }
-
+    
     // Event Handler for "touched" / User interacted with fields, built with arrow function so no need to bind .this to event handler
     handleBlur = field => () => {
         //setState is used to change the "touched" object
