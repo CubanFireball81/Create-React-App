@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
     Breadcrumb, 
     BreadcrumbItem,
@@ -8,7 +8,7 @@ import {
     Row
 } from 'reactstrap';
 import { Control, Form, Errors } from 'react-redux-form';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const required = val => val && val.length;

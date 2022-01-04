@@ -13,39 +13,10 @@ class CommentForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isModalOpen: false,
-            touched: {
-                firstName: false,
-                lastName: false,
-                phoneNum: false,
-                email: false
-            }
+            isModalOpen: false
         };
         this.toggleModal = this.toggleModal.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleBlur = field => () => {
-        //setState is used to change the "touched" object
-        this.setState({
-            //Instead of changing the object as a whole, we are only updating the changed properties inside the object
-            touched: { ...this.state.touched, [field]: true }
-        });
-    }
-
-    handleInputChange(event) {
-        //Stores property of event target for easy access
-        const target = event.target;
-        //Stores property of event name for easy access
-        const name = target.name;
-        //Stores property of target type, either checked if checkbox type, or the value if not a checkbox type
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-
-        //Set the property based on the target's name, dynamically
-        this.setState({
-            [name]: value
-        });
     }
 
     handleSubmit(values) {
@@ -217,4 +188,4 @@ function CampsiteInfo(props) {
     return <div />
 }
 
-export default CampsiteInfo
+export default CampsiteInfo;
