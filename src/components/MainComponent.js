@@ -6,9 +6,14 @@ import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
+import { addComment } from '../redux/ActionCreators';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
+const mapDispatchToProps = {
+    addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text))
+};
 
 const mapStateToProps = state => {
     return {
@@ -44,6 +49,7 @@ class Main extends Component {
                     comments={this.props.comments.filter(
                         comment => comment.campsiteId === +match.params.campsiteId
                     )}
+                    addComment={this.props.addComment}
                 />
             );
         };
@@ -65,4 +71,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
