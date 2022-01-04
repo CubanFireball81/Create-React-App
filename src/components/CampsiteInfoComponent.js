@@ -74,9 +74,8 @@ class CommentForm extends Component {
                         <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <div className='form-group'>
                                 <Label htmlFor="rating">Rating:</Label>
-                                <Control.select model=".rating" name="rating" id="rating"
+                                <Control.select model=".rating" name="rating" id="rating" defaultValue={1}
                                     className="form-control">
-                                    <option>Select a rating....</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
