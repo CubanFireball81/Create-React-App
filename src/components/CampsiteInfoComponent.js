@@ -3,6 +3,7 @@ import { Button, Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, 
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 
 const required = val => val && val.length;
@@ -99,7 +100,7 @@ function RenderCampsite({ campsite }) {
     return (
         <div className='col-md-5 m-1'>
             <Card>
-                <CardImg top src={campsite.image} alt={campsite.name} />
+                <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
                 <CardBody>
                     <CardText>{campsite.description}</CardText>
                 </CardBody>
