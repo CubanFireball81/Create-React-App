@@ -15,7 +15,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapDispatchToProps = {
     postComment: (campsiteId, rating, author, text) => (postComment(campsiteId, rating, author, text)),
-    addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text)),
     fetchCampsites: () => (fetchCampsites()),
     resetFeedbackForm: () => (actions.reset('feedbackForm')),
     fetchComments: () => (fetchComments()),
@@ -90,3 +89,6 @@ class Main extends Component {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+
+/* Removed from MapDispatchToProps:
+addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text)),*/
