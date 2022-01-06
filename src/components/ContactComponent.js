@@ -29,26 +29,11 @@ class Contact extends Component {
             agree: false,
             contactType: 'By Phone',
             feedback: '',
-            touched: {
-                firstName: false,
-                lastName: false,
-                phoneNum: false,
-                email: false
-            }
         };
 
         //Binding 'this' to Event Handlers that handle Form input changes and Form submission
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    // Event Handler for "touched" / User interacted with fields, built with arrow function so no need to bind .this to event handler
-    handleBlur = field => () => {
-        //setState is used to change the "touched" object
-        this.setState({
-            //Instead of changing the object as a whole, we are only updating the changed properties inside the object
-            touched: { ...this.state.touched, [field]: true }
-        });
     }
 
     //Event Handler that collects and stores information about the event
@@ -68,10 +53,8 @@ class Contact extends Component {
 
     //For now, alert and console.log Form data
     handleSubmit(values) {
-        //Use JSON.stringify to turn JavaScript object data into a string
-        console.log('Current state is: ' + JSON.stringify(values));
-        alert('Current state is: ' + JSON.stringify(values));
         this.props.resetFeedbackForm();
+        this.props.postFeedback(values);
     }
 
     render() {
