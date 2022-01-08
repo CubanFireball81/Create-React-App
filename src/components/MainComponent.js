@@ -53,7 +53,7 @@ class Main extends Component {
                     promotionLoading={this.props.promotions.isLoading}
                     promotionErrMess={this.props.promotions.errMess}
                     partner={this.props.partners.partners.filter(partner => partner.featured)[0]}
-                    partnerLoading={this.props.partners.isLoading}
+                    partnersLoading={this.props.partners.isLoading}
                     partnersErrMess={this.props.partners.errMess}
                 />
             );
